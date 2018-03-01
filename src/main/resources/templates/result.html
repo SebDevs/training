@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="jumbotron text-center">
+  <h1>Company x</h1>
+  <p>welcome</p> 
+ 
+</div>
+
+
+<div class="col-4 mx-auto">
+<div class="text-center">
+ <form action="#" th:action="@{/demo/add}" th:object="${user}" method="post" class="form-inline">
+   <div class="form-group">
+   <label for="email">Name</label>
+  <input type="text" class="form-control" id="email" th:field="*{name}" />
+ </div>
+ <div class="form-group">
+ <label for="ex4">Email</label>
+ <input type="text" class="form-control" id="ex4" th:field="*{email}" />
+ </div>
+ <button type="submit" value="Submit" class="btn btn-default">Submit</button>
+ 
+ </form>
+ </div>
+
+ </div>
+
+<div class="container">
+<h1 class="text-center">Users</h1>
+  
+            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th class="text-center">Id</th>
+        <th class="text-center">Name</th>
+        <th class="text-center">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="text-center" th:each ="olio : ${lomakeOlio}">
+        <td th:text="${olio.id}"></td>
+        <td th:text="${olio.name}"></td>
+        <td th:text="${olio.email}"></td>
+      </tr>
+      
+      
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
